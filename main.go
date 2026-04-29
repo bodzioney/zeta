@@ -3,6 +3,7 @@ package main
 import (
 	"flag"
 	"fmt"
+	"io"
 	"log"
 	"os"
 	"runtime"
@@ -47,8 +48,7 @@ func main() {
 		log.SetFlags(log.Ldate | log.Ltime | log.Llongfile)
 		log.Println("Starting zeta LSP server...")
 	} else {
-		// discard logs by default
-		log.SetOutput(os.Stdout)
+		log.SetOutput(io.Discard)
 	}
 
 	serverInstance, err := server.NewServer(Version)
