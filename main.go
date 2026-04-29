@@ -51,7 +51,7 @@ func main() {
 		log.SetOutput(os.Stdout)
 	}
 
-	serverInstance, err := server.NewServer()
+	serverInstance, err := server.NewServer(Version)
 	if err != nil {
 		log.Fatalf("Failed to create server: %v", err)
 	}
